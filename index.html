@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Halaman Cinta 💖</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Script -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <main class="container" role="main">
+    <header>
+      <h1 aria-live="polite">💖 <span id="nameA">Kamu</span> & <span id="nameB">adella</span> 💖</h1>
+      <p id="daysTogether">Isi nama & tanggal untuk menghitung hari bersama ✨</p>
+    </header>
+
+    <section class="card" aria-label="Pembuat halaman cinta">
+      <div class="typewriter" aria-live="polite">
+        <span id="tw"></span><span class="caret" aria-hidden="true"></span>
+      </div>
+
+      <div class="controls">
+        <label class="field" for="iA">
+          <span class="label">Namamu</span>
+          <input id="iA" class="input" placeholder="contoh: Faris" autocomplete="off" />
+        </label>
+        <label class="field" for="iB">
+          <span class="label">Nama pasangan</span>
+          <input id="iB" class="input" placeholder="contoh: adella" autocomplete="off" />
+        </label>
+        <label class="field" for="iDate">
+          <span class="label">Tanggal mulai (anniversary)</span>
+          <input id="iDate" class="date" type="date" />
+        </label>
+        <label class="field" for="iMsg">
+          <span class="label">Pesan khusus (opsional)</span>
+          <input id="iMsg" class="input" placeholder="Tuliskan kalimat manismu di sini" maxlength="140" />
+        </label>
+        <label class="field" for="theme">
+          <span class="label">Tema</span>
+          <select id="theme" class="select">
+            <option value="merona">Merona (default)</option>
+            <option value="sunset">Sunset</option>
+            <option value="ocean">Ocean</option>
+            <option value="forest">Forest</option>
+          </select>
+        </label>
+        <label class="field" for="font">
+          <span class="label">Font</span>
+          <select id="font" class="select">
+            <option value="sans">Sans (bersih)</option>
+            <option value="serif">Serif romantis</option>
+            <option value="handwriting">Tulis tangan</option>
+          </select>
+        </label>
+        <div class="buttons">
+          <button id="btnStart" class="btn" type="button" aria-label="Terapkan pengaturan">Mulai</button>
+          <button id="btnLetter" class="btn btn-ghost" type="button" aria-label="Buka surat cinta">Kirim Cinta 💌</button>
+          <button id="btnMusic" class="btn btn-ghost" type="button" aria-label="Putar atau jeda musik">Musik Lembut 🎵</button>
+          <input id="vol" class="range" type="range" min="0" max="1" step="0.01" value="0.15" aria-label="Volume musik">
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Dibuat dengan <span aria-hidden="true">💗</span> menggunakan HTML, CSS, dan JavaScript.
+      Klik di mana saja untuk ledakan hati.
+    </footer>
+  </main>
+
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="letter">
+      <button class="close" id="closeModal" aria-label="Tutup"></button>
+      <h2 id="modal-title">Surat untuk <span id="toName">Kamu</span> ✨</h2>
+      <p id="letterBody">Setiap baris kode memiliki titik koma; tapi kisah kita ingin terus berlanjut tanpa akhir. Terima kasih sudah jadi variabel favoritku.</p>
+      <p><small class="muted">Dibuat pada <span id="today"></span></small></p>
+    </div>
+  </div>
+
+  <div class="floating-tip">Tekan <span class="kbd">L</span> untuk memulai/menjeda animasi hati • <span class="kbd">Esc</span> untuk menutup surat</div>
+</body>
+</html>
